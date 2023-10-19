@@ -5,16 +5,23 @@ using UnityEngine;
 public class Enemigos : MonoBehaviour
 {
     public float speed;
-    // Start is called before the first frame update
+    public Puntaje textObject;
+    
     void Start()
     {
-        
+        textObject = FindAnyObjectByType<Puntaje>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.right * speed * Time.deltaTime);
+        transform.Translate(Vector3.left.normalized * speed * Time.deltaTime);
     }
-    
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        textObject.puntos = textObject.puntos + 1;
+        Destroy(collision.gameObject);
+        Destroy(gameObject);
+    }
 }

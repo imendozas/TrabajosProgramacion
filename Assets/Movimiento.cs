@@ -6,12 +6,12 @@ public class Movimiento : MonoBehaviour
 {
     public GameObject instanceObject;
     public float speed;
-    //hacer public el script para unity
+    public Vidas textObject;
 
-    
+
     void Start()
     {
-        
+        textObject = FindAnyObjectByType<Vidas>();
     }
 
     void Update()
@@ -32,5 +32,11 @@ public class Movimiento : MonoBehaviour
             transform.Translate(Vector3.down.normalized * speed * Time.deltaTime);
         }
 
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        textObject.vidas = textObject.vidas - 1;
+        Destroy(collision.gameObject);
+        Destroy(gameObject);
     }
 }
