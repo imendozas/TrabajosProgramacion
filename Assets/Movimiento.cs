@@ -35,8 +35,15 @@ public class Movimiento : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        textObject.vidas = textObject.vidas - 1;
-        Destroy(collision.gameObject);
-        Destroy(gameObject);
+        if(collision.gameObject.tag == "enemigo")
+        {
+            textObject.puntosVida = textObject.puntosVida - 1;
+            Destroy(collision.gameObject);
+            if(textObject.puntosVida <1)
+            {
+                Destroy(gameObject);
+            }
+        }
+        
     }
 }

@@ -7,6 +7,7 @@ public class Enemigos : MonoBehaviour
     public float speed;
     public Puntaje textObject;
     
+    
     void Start()
     {
         textObject = FindAnyObjectByType<Puntaje>();
@@ -20,8 +21,17 @@ public class Enemigos : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        textObject.puntos = textObject.puntos + 1;
-        Destroy(collision.gameObject);
-        Destroy(gameObject);
+        if (collision.gameObject.tag == "balas")
+        {
+            textObject.puntos = textObject.puntos + 1;
+            Destroy(collision.gameObject);
+
+            Destroy(gameObject);
+
+        }
+
     }
 }
+
+
+

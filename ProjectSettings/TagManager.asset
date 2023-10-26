@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - player
+  - pared
+  - enemigo
+  - balas
   layers:
   - Default
   - TransparentFX
