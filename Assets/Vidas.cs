@@ -16,6 +16,6 @@ public class Vidas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textComponent.text = "Vidas: " + puntosVida;
+        textComponent.text = "VIDAS: " + puntosVida;
     }
 }

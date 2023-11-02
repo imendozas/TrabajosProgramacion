@@ -14,6 +14,6 @@ public class Puntaje : MonoBehaviour
 
     void Update()
     {
-        textComponent.text = "Puntos: " + puntos;
+        textComponent.text = "PUNTOS: " + puntos;
     }
 }
