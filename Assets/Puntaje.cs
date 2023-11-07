@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Puntaje : MonoBehaviour
@@ -15,5 +16,7 @@ public class Puntaje : MonoBehaviour
     void Update()
     {
         textComponent.text = "PUNTOS: " + puntos;
+
     }
+    
 }

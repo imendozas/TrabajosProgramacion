@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemigos : MonoBehaviour
 {
@@ -25,11 +27,12 @@ public class Enemigos : MonoBehaviour
         {
             textObject.puntos = textObject.puntos + 1;
             Destroy(collision.gameObject);
-
             Destroy(gameObject);
-
         }
-
+        if (textObject.puntos == 20) 
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 }
 

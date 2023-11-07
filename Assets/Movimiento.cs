@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movimiento : MonoBehaviour
 {
@@ -42,8 +43,10 @@ public class Movimiento : MonoBehaviour
             if(textObject.puntosVida <1)
             {
                 Destroy(gameObject);
+                SceneManager.LoadScene(2);
             }
         }
-        
+
     }
 }
+
