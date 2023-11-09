@@ -8,10 +8,11 @@ public class Movimiento : MonoBehaviour
     public GameObject instanceObject;
     public float speed;
     public Vidas textObject;
-
-
+    public SpriteRenderer spriteRenderer;
+    public Sprite imgArriba;
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         textObject = FindAnyObjectByType<Vidas>();
     }
 
@@ -25,6 +26,7 @@ public class Movimiento : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
+            spriteRenderer.sprite = imgArriba;
             transform.Translate(Vector3.up.normalized * speed * Time.deltaTime);
         }
 
