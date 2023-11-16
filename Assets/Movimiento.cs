@@ -10,6 +10,9 @@ public class Movimiento : MonoBehaviour
     public Vidas textObject;
     public SpriteRenderer spriteRenderer;
     public Sprite imgArriba;
+    public Sprite imgAbajo;
+    public Sprite imgBala;
+    public Sprite imgLado;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -20,7 +23,7 @@ public class Movimiento : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
+            spriteRenderer.sprite = imgBala;
             Instantiate(instanceObject, transform.position, Quaternion.identity);
         }
 
@@ -32,9 +35,21 @@ public class Movimiento : MonoBehaviour
 
         if (Input.GetKey(KeyCode.S))
         {
+            spriteRenderer.sprite = imgAbajo;
             transform.Translate(Vector3.down.normalized * speed * Time.deltaTime);
         }
 
+        if (Input.GetKey(KeyCode.D))
+        {
+            spriteRenderer.sprite = imgLado;
+            transform.Translate(Vector3.right.normalized * speed * Time.deltaTime);
+        }
+
+        if(Input.GetKey(KeyCode.A))
+        {
+            spriteRenderer.sprite = imgLado;
+            transform.Translate(Vector3.left.normalized * speed * Time.deltaTime);
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -47,6 +62,11 @@ public class Movimiento : MonoBehaviour
                 Destroy(gameObject);
                 SceneManager.LoadScene(2);
             }
+        }
+        if(collision.gameObject.tag == "powerupV")
+        {
+            textObject.puntosVida = textObject.puntosVida + 3;
+            Destroy(collision.gameObject);
         }
 
     }

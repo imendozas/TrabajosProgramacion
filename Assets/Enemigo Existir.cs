@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnemigoExistir : MonoBehaviour
 {
     public GameObject enemy;
-    public float max;
     public float min;
+    public float max;
+    
 
     public float timer;
     
