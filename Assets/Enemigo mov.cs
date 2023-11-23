@@ -28,7 +28,7 @@ public class Enemigos : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
-        if (textObject.puntos == 20) 
+        if (textObject.puntos == 50) 
         {
             SceneManager.LoadScene(3);
         }

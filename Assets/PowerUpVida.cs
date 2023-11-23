@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PowerUp : MonoBehaviour
 {
@@ -10,24 +12,27 @@ public class PowerUp : MonoBehaviour
     public float maxY;
     public float minX;
     public float minY;
-
+    public Puntaje textObject;
     public float timer;
 
     void Start()
     {
-       
+        textObject = FindAnyObjectByType<Puntaje>();
     }
 
     
     void Update()
     {
-        timer = timer - Time.deltaTime;
-        if (timer <= 0)
+        if (textObject.puntos >= 5)
         {
-            float posyY = Random.Range(minY, maxY);
-            float posyX = Random.Range(minX, maxX);
-            Instantiate(powerupV, new Vector4(transform.position.x, posyY, posyX, 0), Quaternion.identity);
-            timer = 1;
+            timer = timer - Time.deltaTime;
+            if (timer <= 0)
+            {
+                float posyY = Random.Range(minY, maxY);
+                float posyX = Random.Range(minX, maxX);
+                Instantiate(powerupV, new Vector3(posyX, posyY, 0), Quaternion.identity);
+                timer = 10;
+            }
         }
     }
 
