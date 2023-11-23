@@ -11,6 +11,7 @@ public class MovimientoEsfera : MonoBehaviour
     void Update()
     {
        transform.Translate(Vector3.right * speed  * Time.deltaTime);
+       
     }
     
 

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Movimiento : MonoBehaviour
 {
     public GameObject instanceObject;
+    public GameObject balaPos;
     public float speed;
     public Vidas textObject;
     public SpriteRenderer spriteRenderer;
@@ -24,7 +25,7 @@ public class Movimiento : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             spriteRenderer.sprite = imgBala;
-            Instantiate(instanceObject, transform.position, Quaternion.identity);
+            Instantiate(instanceObject, balaPos.transform.position, Quaternion.identity);
         }
 
         if (Input.GetKey(KeyCode.W))
@@ -68,6 +69,7 @@ public class Movimiento : MonoBehaviour
             textObject.puntosVida = textObject.puntosVida + 3;
             Destroy(collision.gameObject);
         }
+      
 
     }
 }

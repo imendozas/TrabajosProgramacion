@@ -1,11 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Xml.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class PowerUp : MonoBehaviour
+public class PowerUpBalas : MonoBehaviour
 {
     public GameObject powerupV;
     public float maxX;
@@ -14,13 +11,12 @@ public class PowerUp : MonoBehaviour
     public float minY;
     public Puntaje textObject;
     public float timer;
-
     void Start()
     {
         textObject = FindAnyObjectByType<Puntaje>();
     }
 
-    
+    // Update is called once per frame
     void Update()
     {
         if (textObject.puntos >= 20)
@@ -33,9 +29,7 @@ public class PowerUp : MonoBehaviour
                 Instantiate(powerupV, new Vector3(posyX, posyY, 0), Quaternion.identity);
                 timer = 10;
             }
-         
+
         }
     }
-
 }
-//untrigger no tinen fisica si se detectan pero se atraviesan unTrigger, un trigger con un collider si funciona, trigger con trigger no funciona

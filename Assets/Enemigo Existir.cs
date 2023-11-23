@@ -7,24 +7,27 @@ public class EnemigoExistir : MonoBehaviour
     public GameObject enemy;
     public float min;
     public float max;
-    
+    public Puntaje textObject;
 
     public float timer;
     
     void Start()
     {
-        
+        textObject = FindAnyObjectByType<Puntaje>();
     }
 
     
     void Update()
     {
-        timer = timer - Time.deltaTime;
-        if (timer <= 0)
+        if (textObject.puntos <= 20)
         {
-            float posy = Random.Range(min, max);
-            Instantiate(enemy, new Vector3(transform.position. x, posy, 0), Quaternion.identity);
-            timer = 1;
+            timer = timer - Time.deltaTime;
+            if (timer <= 0)
+            {
+                float posy = Random.Range(min, max);
+                Instantiate(enemy, new Vector3(transform.position.x, posy, 0), Quaternion.identity);
+                timer = 1;
+            }
         }
     }
 
