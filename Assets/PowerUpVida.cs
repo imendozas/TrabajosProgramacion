@@ -23,7 +23,7 @@ public class PowerUp : MonoBehaviour
     
     void Update()
     {
-        if (textObject.puntos >= 20)
+        if (textObject.puntos >= 8)
         {
             timer = timer - Time.deltaTime;
             if (timer <= 0)

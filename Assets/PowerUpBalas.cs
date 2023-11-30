@@ -19,7 +19,7 @@ public class PowerUpBalas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (textObject.puntos >= 20)
+        if (textObject.puntos >= 8)
         {
             timer = timer - Time.deltaTime;
             if (timer <= 0)

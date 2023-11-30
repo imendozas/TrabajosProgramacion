@@ -25,7 +25,8 @@ public class Movimiento : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             spriteRenderer.sprite = imgBala;
-            Instantiate(instanceObject, balaPos.transform.position, Quaternion.identity);
+            Instantiate(instanceObject, new Vector3(balaPos.transform.position.x, balaPos.transform.position.y+1, 0), Quaternion.identity);
+            Instantiate(instanceObject, new Vector3(balaPos.transform.position.x, balaPos.transform.position.y-1, 0), Quaternion.identity);
         }
 
         if (Input.GetKey(KeyCode.W))
@@ -46,7 +47,7 @@ public class Movimiento : MonoBehaviour
             transform.Translate(Vector3.right.normalized * speed * Time.deltaTime);
         }
 
-        if(Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             spriteRenderer.sprite = imgLado;
             transform.Translate(Vector3.left.normalized * speed * Time.deltaTime);
@@ -54,22 +55,23 @@ public class Movimiento : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "enemigo")
+        if (collision.gameObject.tag == "enemigo")
         {
-            textObject.puntosVida = textObject.puntosVida - 1;
+              textObject.puntosVida = textObject.puntosVida - 1;
             Destroy(collision.gameObject);
-            if(textObject.puntosVida <1)
+            if (textObject.puntosVida < 1)
             {
                 Destroy(gameObject);
                 SceneManager.LoadScene(2);
             }
         }
-        if(collision.gameObject.tag == "powerupV")
+
+        if (collision.gameObject.tag == "powerupV")
         {
             textObject.puntosVida = textObject.puntosVida + 3;
             Destroy(collision.gameObject);
         }
-      
+
 
     }
 }

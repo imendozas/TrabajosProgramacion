@@ -3,7 +3,11 @@ guid: 1fba452854b58a24ea031ebb2fb54507
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - vatuu: {fileID: 9209008583008532316, guid: ab2ec6a83933acd45a59d376308edddb, type: 3}
+  - espiritu1: {fileID: 7210648031316246632, guid: 9d3a6cbadb9966a42b7b541aad19eebf, type: 3}
+  - espiritu2: {fileID: 7768146435930616379, guid: 80d4cd2bd764f5b4ba70360f13ca3044, type: 3}
+  - textObject: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

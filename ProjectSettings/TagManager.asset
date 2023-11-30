@@ -9,7 +9,6 @@ TagManager:
   - enemigo
   - balas
   - powerupV
-  - powerupB
   layers:
   - Default
   - TransparentFX

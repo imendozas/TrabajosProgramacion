@@ -20,15 +20,16 @@ public class Enemigos : MonoBehaviour
         transform.Translate(Vector3.left.normalized * speed * Time.deltaTime);
     }
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "balas")
+        if (other.gameObject.tag == "balas")
         {
             textObject.puntos = textObject.puntos + 1;
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
             Destroy(gameObject);
         }
-        if (textObject.puntos == 50) 
+        if (textObject.puntos == 50)
         {
             SceneManager.LoadScene(3);
         }
