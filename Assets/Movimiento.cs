@@ -74,16 +74,8 @@ public class Movimiento : MonoBehaviour
         if (collision.gameObject.tag == "powerupB")
         {
 
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                spriteRenderer.sprite = imgBala;
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    Instantiate(instanceObject, new Vector3(balaPos.transform.position.x, balaPos.transform.position.y + 1, 0), Quaternion.identity);
-                    Instantiate(instanceObject, new Vector3(balaPos.transform.position.x, balaPos.transform.position.y - 1, 0), Quaternion.identity);
-                }
-                Destroy(collision.gameObject);
-            }
+            textObject.puntosVida = textObject.puntosVida + 2;
+            Destroy(collision.gameObject);
 
         }
     }

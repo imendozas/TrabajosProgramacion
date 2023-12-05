@@ -27,7 +27,7 @@ public class PowerUpBalas : MonoBehaviour
                 float posyY = Random.Range(minY, maxY);
                 float posyX = Random.Range(minX, maxX);
                 Instantiate(powerupV, new Vector3(posyX, posyY, 0), Quaternion.identity);
-                timer = 30;
+                timer = 20;
             }
 
         }
