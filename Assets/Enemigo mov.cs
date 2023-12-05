@@ -14,7 +14,7 @@ public class Enemigos : MonoBehaviour
         textObject = FindAnyObjectByType<Puntaje>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         transform.Translate(Vector3.left.normalized * speed * Time.deltaTime);
@@ -29,7 +29,7 @@ public class Enemigos : MonoBehaviour
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
-        if (textObject.puntos == 50)
+        if (textObject.puntos == 35)
         {
             SceneManager.LoadScene(3);
         }

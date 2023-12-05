@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ganaste.unity
     guid: a39c4179ddc8b344d9ffdd47f6577309
+  - enabled: 1
+    path: Assets/Scenes/Continuar.unity
+    guid: 0604f7cf3fe684a468fe990e08d8e5dd
+  - enabled: 1
+    path: Assets/Scenes/FinalBoss.unity
+    guid: d21ea01644d263a46a0ab9100ff93b00
   m_configObjects: {}

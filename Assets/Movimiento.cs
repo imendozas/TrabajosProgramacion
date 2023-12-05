@@ -25,8 +25,7 @@ public class Movimiento : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             spriteRenderer.sprite = imgBala;
-            Instantiate(instanceObject, new Vector3(balaPos.transform.position.x, balaPos.transform.position.y+1, 0), Quaternion.identity);
-            Instantiate(instanceObject, new Vector3(balaPos.transform.position.x, balaPos.transform.position.y-1, 0), Quaternion.identity);
+            Instantiate(instanceObject, new Vector3(balaPos.transform.position.x, balaPos.transform.position.y, 0), Quaternion.identity);
         }
 
         if (Input.GetKey(KeyCode.W))
@@ -57,7 +56,7 @@ public class Movimiento : MonoBehaviour
     {
         if (collision.gameObject.tag == "enemigo")
         {
-              textObject.puntosVida = textObject.puntosVida - 1;
+            textObject.puntosVida = textObject.puntosVida - 1;
             Destroy(collision.gameObject);
             if (textObject.puntosVida < 1)
             {
@@ -68,11 +67,25 @@ public class Movimiento : MonoBehaviour
 
         if (collision.gameObject.tag == "powerupV")
         {
-            textObject.puntosVida = textObject.puntosVida + 3;
+            textObject.puntosVida = textObject.puntosVida + 2;
             Destroy(collision.gameObject);
         }
 
+        if (collision.gameObject.tag == "powerupB")
+        {
 
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                spriteRenderer.sprite = imgBala;
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Instantiate(instanceObject, new Vector3(balaPos.transform.position.x, balaPos.transform.position.y + 1, 0), Quaternion.identity);
+                    Instantiate(instanceObject, new Vector3(balaPos.transform.position.x, balaPos.transform.position.y - 1, 0), Quaternion.identity);
+                }
+                Destroy(collision.gameObject);
+            }
+
+        }
     }
 }
 

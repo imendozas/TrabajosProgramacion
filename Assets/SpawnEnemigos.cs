@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class SpawnEnemigos : MonoBehaviour
 {
-    public GameObject vatuu;
     public GameObject espiritu1;
     public GameObject espiritu2;
+    public GameObject vaatu;
 
     public float max;
     public float min;
@@ -31,7 +31,7 @@ public class SpawnEnemigos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (textObject.puntos >= 8)
+        if (textObject.puntos >= 15)
         {
             timer = timer - Time.deltaTime;
 
@@ -55,17 +55,23 @@ public class SpawnEnemigos : MonoBehaviour
                     {
                         Instantiate(espiritu2, new Vector3(transform.position.x, posY, 0), Quaternion.identity);
                     }
-                //else if (enemigoElegido < 90)
-                //    {
-                //    float posyY = Random.Range(minY1, maxY1);
-                //    float posyX = Random.Range(minX1, maxX1);
-                //    Instantiate(vatuu, new Vector3(posyX, posyY, 0), Quaternion.identity);
-                //    timer = 10;  
-                //    }
-
-                    timer = 1;
+                else if (enemigoElegido < 90)
+                {
+                    float posyY = Random.Range(minY1, maxY1);
+                    float posyX = Random.Range(minX1, maxX1);
+                    Instantiate(vaatu, new Vector3(posyX, posyY, 0), Quaternion.identity);
+                    timer = 10;
                 }
+                timer = 2;
             }
         }
+        }
     }
+//else if (enemigoElegido < 90)
+//    {
+//    float posyY = Random.Range(minY1, maxY1);
+//    float posyX = Random.Range(minX1, maxX1);
+//    Instantiate(vatuu, new Vector3(posyX, posyY, 0), Quaternion.identity);
+//    timer = 10;  
+//    }
 

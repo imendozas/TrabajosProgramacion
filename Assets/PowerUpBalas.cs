@@ -19,7 +19,7 @@ public class PowerUpBalas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (textObject.puntos >= 8)
+        if (textObject.puntos >= 15)
         {
             timer = timer - Time.deltaTime;
             if (timer <= 0)
@@ -27,7 +27,7 @@ public class PowerUpBalas : MonoBehaviour
                 float posyY = Random.Range(minY, maxY);
                 float posyX = Random.Range(minX, maxX);
                 Instantiate(powerupV, new Vector3(posyX, posyY, 0), Quaternion.identity);
-                timer = 10;
+                timer = 30;
             }
 
         }

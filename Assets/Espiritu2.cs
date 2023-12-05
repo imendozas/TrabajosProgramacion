@@ -18,7 +18,7 @@ public class Espiritu2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y > 0) 
+        if (transform.position.y > 6) 
         {
             direccion.y = -1;
         }
@@ -26,19 +26,20 @@ public class Espiritu2 : MonoBehaviour
         {
             direccion.y = 1;
         }
-        transform.Translate(new Vector3(direccion.x * speedx, direccion.y * speedy,0)*Time.deltaTime;
+        transform.Translate(new Vector3(direccion.x * speedx, direccion.y * speedy,0)*Time.deltaTime);
     }
-   private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "balas")
         {
-            if (other.gameObject.tag == "balas")
-            {
-                textObject.puntos = textObject.puntos + 1;
-                Destroy(other.gameObject);
-                Destroy(gameObject);
-            }
-            if (textObject.puntos == 50)
-            {
-                SceneManager.LoadScene(3);
-            }
+            textObject.puntos = textObject.puntos + 1;
+            Destroy(other.gameObject);
+            Destroy(gameObject);
         }
+
+        if (textObject.puntos == 40)
+        {
+            SceneManager.LoadScene(3);
+        }
+    }     
 }

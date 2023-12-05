@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5761247629732508826}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.68, y: -1.3455, z: 0.21825027}
+  m_LocalPosition: {x: -9.68, y: -1.448, z: 0.21825027}
   m_LocalScale: {x: 0.46967, y: 0.4755409, z: 0.46967}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -53,8 +53,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.3397005
+  m_Center: {x: 0, y: 0, z: -0.8501958}
 --- !u!212 &1352802771487946092
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -119,4 +119,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1016136fee45ff444b63abc5d6fb5773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 23

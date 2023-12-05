@@ -19,7 +19,7 @@ public class EnemigoExistir : MonoBehaviour
     
     void Update()
     {
-        if (textObject.puntos <= 8)
+        if (textObject.puntos <= 15)
         {
             timer = timer - Time.deltaTime;
             if (timer <= 0)

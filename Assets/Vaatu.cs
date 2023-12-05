@@ -41,7 +41,8 @@ public class Vaatu : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
-        if (textObject.puntos == 50)
+
+        if (textObject.puntos == 40)
         {
             SceneManager.LoadScene(3);
         }
