@@ -52,30 +52,29 @@ public class Movimiento : MonoBehaviour
             transform.Translate(Vector3.left.normalized * speed * Time.deltaTime);
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "enemigo")
+        if (other.gameObject.tag == "enemigo")
         {
             textObject.puntosVida = textObject.puntosVida - 1;
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
             if (textObject.puntosVida < 1)
             {
                 Destroy(gameObject);
                 SceneManager.LoadScene(2);
             }
         }
-
-        if (collision.gameObject.tag == "powerupV")
+        if (other.gameObject.tag == "powerupV")
         {
             textObject.puntosVida = textObject.puntosVida + 2;
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
         }
 
-        if (collision.gameObject.tag == "powerupB")
+        if (other.gameObject.tag == "powerupB")
         {
 
-            textObject.puntosVida = textObject.puntosVida + 2;
-            Destroy(collision.gameObject);
+            textObject.puntosVida = textObject.puntosVida + 1;
+            Destroy(other.gameObject);
 
         }
     }

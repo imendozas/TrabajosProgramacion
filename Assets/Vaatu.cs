@@ -33,18 +33,32 @@ public class Vaatu : MonoBehaviour
         }
         transform.Translate(new Vector3(direccion.x * speedx, direccion.y * speedy, 0) * Time.deltaTime);
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "balas")
+        if (other.gameObject.tag == "balas")
         {
-            textObject.puntos = textObject.puntos + 1;
-            Destroy(collision.gameObject);
+            textObject.puntos = textObject.puntos + 2;
+            Destroy(other.gameObject);
             Destroy(gameObject);
         }
 
-        if (textObject.puntos == 35)
+        if (textObject.puntos == 40)
         {
             SceneManager.LoadScene(3);
         }
     }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "balas")
+    //    {
+    //        textObject.puntos = textObject.puntos + 1;
+    //        Destroy(collision.gameObject);
+    //        Destroy(gameObject);
+    //    }
+
+    //    if (textObject.puntos == 35)
+    //    {
+    //        SceneManager.LoadScene(3);
+    //    }
+    //}
 }

@@ -37,7 +37,7 @@ public class Espiritu2 : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (textObject.puntos == 35)
+        if (textObject.puntos == 40)
         {
             SceneManager.LoadScene(3);
         }
